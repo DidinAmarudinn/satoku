@@ -3,6 +3,7 @@ import 'package:happy_pet/constants/app_constants.dart';
 import 'package:happy_pet/models/list_chat_model.dart';
 import 'package:happy_pet/models/message_model.dart';
 import 'package:happy_pet/services/message_service.dart';
+import 'package:happy_pet/ui/components/item_list_chat.dart';
 
 class ChatHistoryScreen extends StatefulWidget {
   const ChatHistoryScreen({Key? key}) : super(key: key);
@@ -26,24 +27,24 @@ class _ChatHistoryScreenState extends State<ChatHistoryScreen> {
                       .map((e) => Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Text(
-                                e.doctorName ?? "",
-                                style: primaryTextStyle,
-                              ),
                               StreamBuilder<List<MessageModel>>(
-                                  stream: MessageService().getChats(
+                                  stream: MessageService().getLastChat(
                                       e.doctorId.toString() +
                                           "_" +
                                           e.userId.toString()),
                                   builder: (context, snapshot) {
                                     if (snapshot.hasData) {
                                       return snapshot.data!.length > 0
-                                          ? Text(snapshot
-                                                  .data![
-                                                      snapshot.data!.length - 1]
-                                                  .message ??
-                                              "")
-                                          : Text("No message");
+                                          ? ItemListChat(
+                                              listChatModel: e,
+                                              lastChat: snapshot.data![snapshot.data!.length-1].message??"",
+                                              unreadChat: 1,
+                                              lastTimeChat: "08:00")
+                                          : ItemListChat(
+                                              listChatModel: e,
+                                              lastChat: "........",
+                                              unreadChat: 1,
+                                              lastTimeChat: "08:00");
                                     } else {
                                       return SizedBox();
                                     }

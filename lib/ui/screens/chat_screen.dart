@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:get/get.dart';
 import 'package:happy_pet/constants/app_constants.dart';
 import 'package:happy_pet/models/doctor_model.dart';
@@ -20,14 +21,21 @@ class ChatScreen extends StatefulWidget {
 }
 
 class _ChatScreenState extends State<ChatScreen> {
+
+  
   TextEditingController textEditingController = TextEditingController();
+  @override
+  void initState() {
+    MessageService().seeMsg("1_2");
+    super.initState();
+  }
   @override
   Widget build(BuildContext context) {
     handleSendMessage(
         bool isFromUSer, String messageText, DateTime time) async {
       Map<String, dynamic> mapMessage = {
         "isFromUser": isFromUSer,
-        "isRead": true,
+        "isRead": false,
         "messageText": messageText,
         "sendAt": time.toString()
       };
