@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "769186024152",
+    "project_id": "satoku-9e629",
+    "storage_bucket": "satoku-9e629.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:769186024152:android:4b3baa1fc1781522b325ad",
+        "android_client_info": {
+          "package_name": "com.socketspace.satoku"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "769186024152-i7mc96cj1ra9kfid1mr570s2jl6cufbr.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.socketspace.satoku",
+            "certificate_hash": "4c310a2f345a39ce5b81878499a2ae0774b38fbd"
+          }
+        },
+        {
+          "client_id": "769186024152-6c8c5ucn182bquh09s06rmqgslari40p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDULlvZ_YSm89t6wmccdubR_TzOX1arAC4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "769186024152-6c8c5ucn182bquh09s06rmqgslari40p.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
